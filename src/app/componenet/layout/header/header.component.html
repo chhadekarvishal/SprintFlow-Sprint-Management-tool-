@@ -1,0 +1,55 @@
+<mat-toolbar style="background-color: #185A98; color: white;">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span>SprintFlow</span>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <div fxFlex fxLayoutGap="20px">
+                <div>
+                    <button mat-icon-button>
+                        <mat-icon [matMenuTriggerFor]="menu1" matBadgeColor="accent" [matBadge]="notificationCount"
+                            [matBadgeHidden]="notificationCount === 0">notifications_none</mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="logout()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+
+        <mat-menu #menu1="matMenu" class="notificatinMenu" yPosition="below" style="background: #F3F4F9;">
+            <div fxLayout="column" (click)="$event.stopPropagation();"></div>
+            <div style="background: #FAFAFA; height: 76px; justify-content: center; " fxLayout="row"
+                fxLayoutAlign.gt-xs="space-between center">
+                <p style="font-weight: 400; font-size: 22px; padding-left: 20px !important;
+                  line-height: 30px;  color: #000000;" class="p-1 pb-0">Notifications</p>
+                <mat-icon class="pr-1 pb-0" style="cursor: pointer; margin-right: 15px !important;"
+                    (click)="notificationClose()">close</mat-icon>
+            </div>
+            <mat-divider></mat-divider>
+            <div *ngFor="let task of notificationList">
+                <div fxLayout="row" fxLayoutGap="20px" class="nData" (click)="clearNotification(task)">
+                    <div fxFlex="30" style="display: flex;">
+                        <div style="padding-right: 10px;"><mat-icon>assignment</mat-icon></div>
+                        <div style="margin-top: 3px;">#{{task.bugId}}</div>
+                    </div>
+                    <div fxFlex="70">
+                        <b>Name: </b> {{task.bugName | titlecase}} <br>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
