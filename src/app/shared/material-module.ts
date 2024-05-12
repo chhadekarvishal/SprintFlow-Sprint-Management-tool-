@@ -19,6 +19,9 @@ import { MatNativeDateModule } from "@angular/material/core"
 import { MatRadioModule } from "@angular/material/radio"
 import { MatCheckboxModule } from "@angular/material/checkbox"
 import { MatDialogModule } from "@angular/material/dialog"
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { MatDialogModule } from "@angular/material/dialog"
         MatNativeDateModule,
         MatRadioModule,
         MatCheckboxModule,
-        MatDialogModule
+        MatDialogModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
+        FlexLayoutModule
     ]
 })
 export class MaterialModule { }

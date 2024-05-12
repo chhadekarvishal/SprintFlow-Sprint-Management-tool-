@@ -8,13 +8,15 @@ import { MaterialModule } from './shared/material-module';
 import { LayoutComponent } from './componenet/layout/layout.component';
 import { SidenavComponent } from './componenet/layout/sidenav/sidenav.component';
 import { HeaderComponent } from './componenet/layout/header/header.component';
+import { DashboardComponent } from './componenet/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     SidenavComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
