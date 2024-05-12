@@ -9,6 +9,8 @@ import { LayoutComponent } from './componenet/layout/layout.component';
 import { SidenavComponent } from './componenet/layout/sidenav/sidenav.component';
 import { HeaderComponent } from './componenet/layout/header/header.component';
 import { DashboardComponent } from './componenet/dashboard/dashboard.component';
+import { IssuesComponent } from './componenet/issues/issues.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +18,14 @@ import { DashboardComponent } from './componenet/dashboard/dashboard.component';
     LayoutComponent,
     SidenavComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    IssuesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

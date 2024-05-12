@@ -1,0 +1,21 @@
+.stats-cards {
+    .mat-card {
+        overflow: hidden;
+    }
+}
+
+.card-bottom {
+    height: 240px !important;
+}
+
+.mat-header-cell {
+    background-color: rgb(45, 154, 255);
+    color: white;
+}
+
+.title-txt {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333333;
+}

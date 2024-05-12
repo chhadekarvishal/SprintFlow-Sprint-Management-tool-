@@ -35,3 +35,11 @@
 :host ::ng-deep mat-progress-bar .mdc-linear-progress__bar-inner {
     border-top-width: 12px;
 }
+
+:host ::ng-deep .mat-mdc-table .mdc-data-table__header-row {
+    background: #2d9aff !important;
+}
+
+:host ::ng-deep .mat-mdc-table .mdc-data-table__header-row th {
+    color: #ffffff;
+}

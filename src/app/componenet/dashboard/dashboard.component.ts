@@ -9,6 +9,7 @@ import { map, startWith } from 'rxjs/operators';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { IssuesComponent } from '../issues/issues.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -144,6 +145,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getProjectList();
     this.getResoucesCount();
+    this.dataSource = this.dummyData;
   }
 
 
@@ -323,14 +325,14 @@ export class DashboardComponent implements OnInit {
     } as any);
   }
   viewClick(data: number) {
-    // const dialogConfig = new MatDialogConfig();
-    // dialogConfig.disableClose = true;
-    // dialogConfig.width = "1080px";
-    // dialogConfig.height = "700px";
-    // dialogConfig.data = { title: "", body: data };
-    // const dialogRef = this.dialog.open(QaIssuesComponent, dialogConfig);
-    // dialogRef.afterClosed().subscribe((data) => {
-    //   // this.router.navigate(["/admin/invoice"]);
-    // });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "1080px";
+    dialogConfig.height = "700px";
+    dialogConfig.data = { title: "", body: data };
+    const dialogRef = this.dialog.open(IssuesComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe((data) => {
+      // this.router.navigate(["/admin/invoice"]);
+    });
   }
 }
