@@ -1,0 +1,37 @@
+.stats-cards {
+    .mat-card {
+        overflow: hidden;
+    }
+}
+
+.card-top {
+    height: 100px !important;
+}
+
+.card-middle {
+    height: 250px !important;
+}
+
+.card-bottom {
+    height: 450px !important;
+}
+
+.resources_count {
+    font-size: 24px;
+    font-weight: 600p;
+}
+
+.mat-header-cell {
+    background-color: rgb(45, 154, 255);
+    color: white;
+}
+
+:host ::ng-deep mat-progress-bar {
+    height: 12px;
+    border-radius: 10px !important;
+    width: 90%;
+}
+
+:host ::ng-deep mat-progress-bar .mdc-linear-progress__bar-inner {
+    border-top-width: 12px;
+}
