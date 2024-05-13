@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent }
+      { path: 'dashboard', loadChildren: () => import('./componenet/dashboard/dashboard.module').then(m => m.DashboardModule) }
     ]
   }
 ];
