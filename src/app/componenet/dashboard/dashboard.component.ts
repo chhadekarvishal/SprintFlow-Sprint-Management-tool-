@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { finalize, share } from 'rxjs/operators';
-// import { Project } from 'src/app/shared/shared/model/project';
-import { HttpErrorResponse } from '@angular/common/http';
 import * as Highcharts from 'highcharts';
-import { EMPTY, Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { IssuesComponent } from '../issues/issues.component';
+
+interface Project {
+  name: string;
+  value: string;
+}
+interface Sprint {
+  name: string;
+  value: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -134,7 +139,6 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
-
   constructor(
     private route: ActivatedRoute,
     public dialog: MatDialog,
@@ -148,37 +152,21 @@ export class DashboardComponent implements OnInit {
     this.dataSource = this.dummyData;
   }
 
+  getTaskSummaryByResources() { }
 
-  getTaskSummaryByResources() {
+  SprintTickets() { }
 
-  }
+  SprintqaIssues() { }
 
-  SprintTickets() {
+  taskByStatusDataForPie() { }
 
-  }
-
-  SprintqaIssues() {
-
-  }
-
-  taskByStatusDataForPie() {
-
-  }
-
-  TicketsCountsByPriorityForBarChart() {
-
-  }
+  TicketsCountsByPriorityForBarChart() { }
 
 
-  QaIssuesCountsByPriorityForBarChart() {
-
-  }
+  QaIssuesCountsByPriorityForBarChart() { }
 
 
-  getResoucesCount() {
-    let role = 'user'
-
-  }
+  getResoucesCount() { }
 
   public ngAfterViewInit(): void {
     if (this.showPieChart) {
@@ -189,16 +177,11 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  getProjectList(): void {
+  getProjectList(): void { }
 
-  }
-
-  getSprintList() {
-
-  }
+  getSprintList() { }
 
   onSelectionProjectChange(event: any) {
-    console.log(event)
     this.projectId = event.id;
     this.selectedProject = event.projectName;
     if (this.projectId != null) {
@@ -328,11 +311,44 @@ export class DashboardComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.width = "1080px";
-    dialogConfig.height = "700px";
+    dialogConfig.height = "1080px";
+    dialogConfig.minHeight = "430px";
     dialogConfig.data = { title: "", body: data };
     const dialogRef = this.dialog.open(IssuesComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((data) => {
       // this.router.navigate(["/admin/invoice"]);
     });
   }
+
+  //STATIC DATA:
+  PROJECTS: Project[] = [
+    { name: 'Project 1', value: 'project1' },
+    { name: 'Project 2', value: 'project2' },
+    { name: 'Project 3', value: 'project3' },
+    { name: 'Project 4', value: 'project4' },
+    { name: 'Project 5', value: 'project5' },
+    { name: 'Project 6', value: 'project6' },
+    { name: 'Project 7', value: 'project7' },
+    { name: 'Project 8', value: 'project8' },
+    { name: 'Project 9', value: 'project9' },
+    { name: 'Project 10', value: 'project10' }
+  ];
+
+
+  SPRINTS: Sprint[] = [
+    { name: 'Sprint 1', value: 'sprint1' },
+    { name: 'Sprint 2', value: 'sprint2' },
+    { name: 'Sprint 3', value: 'sprint3' },
+    { name: 'Sprint 4', value: 'sprint4' },
+    { name: 'Sprint 5', value: 'sprint5' },
+    { name: 'Sprint 6', value: 'sprint6' },
+    { name: 'Sprint 7', value: 'sprint7' },
+    { name: 'Sprint 8', value: 'sprint8' },
+    { name: 'Sprint 9', value: 'sprint9' },
+    { name: 'Sprint 10', value: 'sprint10' }
+  ];
+
+  totalResource: number = 22;
+
+
 }

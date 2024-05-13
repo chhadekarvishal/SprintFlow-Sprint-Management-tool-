@@ -1,8 +1,8 @@
-<div>
-    <header class="mb-4">
+<div style="padding: 12px; min-height: 400px;">
+    <header class="mb-4" style="margin-bottom: 10px;">
         <mat-card fxFlex="100" class="mat-elevation-z4" fxLayoutAlign="space-between center">
             <div>
-                <span class="title-txt">Resource Name: </span> <span>{{resourcesData.assignee}}</span>
+                <span class="title-txt">Resource Name: </span> <span>{{resourcesData.resources_name}}</span>
             </div>
             <div>
                 <button mat-flat-button (click)="close()">X</button>
@@ -11,7 +11,7 @@
     </header>
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
         <mat-card fxFlex="100" class="mat-elevation-z4 card-bottom">
-            <div style="overflow-x: hidden; height: 200px !important;">
+            <div style="overflow-x: hidden; height: 300px !important;">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
                     <!-- Tickets Type Column -->

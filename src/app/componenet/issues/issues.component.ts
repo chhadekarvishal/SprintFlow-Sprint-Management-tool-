@@ -93,12 +93,11 @@ export class IssuesComponent implements OnInit {
 
   }
   close() {
-    console.log("Closed")
     this.dialogRef.close();
   }
 
   addQAIssues() {
     this.dialogRef.close();
-    // this.router.navigateByUrl(this.database + "/qaissues");
+
   }
 }

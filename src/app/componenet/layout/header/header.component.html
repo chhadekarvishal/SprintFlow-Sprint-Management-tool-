@@ -6,25 +6,23 @@
 
         <span>SprintFlow</span>
 
-        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-            <div fxFlex fxLayoutGap="20px">
-                <div>
-                    <button mat-icon-button>
-                        <mat-icon [matMenuTriggerFor]="menu1" matBadgeColor="accent" [matBadge]="notificationCount"
-                            [matBadgeHidden]="notificationCount === 0">notifications_none</mat-icon>
+        <div fxFlex fxLayout="row" fxLayoutAlign="end">
+            <div>
+                <button mat-icon-button>
+                    <mat-icon [matMenuTriggerFor]="menu1" matBadgeColor="accent" [matBadge]="notificationCount"
+                        [matBadgeHidden]="notificationCount === 0">notifications_none</mat-icon>
+                </button>
+            </div>
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu" style="padding-top: 10px;">
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="logout()">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
                     </button>
-                </div>
-                <div>
-                    <button mat-button [matMenuTriggerFor]="menu">
-                        <mat-icon>person_outline</mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                        <button mat-menu-item (click)="logout()">
-                            <mat-icon>exit_to_app</mat-icon>
-                            Sign out
-                        </button>
-                    </mat-menu>
-                </div>
+                </mat-menu>
             </div>
         </div>
 

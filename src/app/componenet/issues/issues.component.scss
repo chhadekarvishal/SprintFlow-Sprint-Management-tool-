@@ -5,7 +5,7 @@
 }
 
 .card-bottom {
-    height: 240px !important;
+    // height: 240px !important;
 }
 
 .mat-header-cell {
@@ -14,8 +14,17 @@
 }
 
 .title-txt {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: #333333;
+    padding-left: 10px;
+}
+
+:host ::ng-deep .mat-mdc-table .mdc-data-table__header-row {
+    background: #2d9aff !important;
+}
+
+:host ::ng-deep .mat-mdc-table .mdc-data-table__header-row th {
+    color: #ffffff;
 }
